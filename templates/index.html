@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OncoPredict | AI Diagnostic Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="glass-panel">
+            
+            <div class="panel-left">
+                <div class="brand">
+                    <div class="logo-icon">+</div>
+                    <span>MED-AI DIAGNOSTICS</span>
+                </div>
+                
+                <div class="hero-text">
+                    <h1>Breast Cancer <br>Prediction System</h1>
+                    <p>Advanced Support Vector Machine (SVM) algorithm for high-accuracy tumor classification.</p>
+                </div>
+
+                <div class="disclaimer">
+                    <small>* For educational purposes only. Not a substitute for professional medical advice.</small>
+                </div>
+            </div>
+
+            <div class="panel-right">
+                <form action="/" method="post">
+                    <h3>Diagnostic Input Parameters</h3>
+                    
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>Radius Mean</label>
+                            <input type="number" step="0.01" name="radius_mean" placeholder="e.g. 14.2" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Texture Mean</label>
+                            <input type="number" step="0.01" name="texture_mean" placeholder="e.g. 20.5" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Perimeter Mean</label>
+                            <input type="number" step="0.01" name="perimeter_mean" placeholder="e.g. 95.3" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Concavity Mean</label>
+                            <input type="number" step="0.0001" name="concavity_mean" placeholder="e.g. 0.08" required>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label>Smoothness Mean</label>
+                            <input type="number" step="0.0001" name="smoothness_mean" placeholder="e.g. 0.10" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="analyze-btn">Run Analysis</button>
+                </form>
+
+                {% if prediction_text %}
+                <div class="result-card {{ result_class }}">
+                    <div class="status-icon"></div>
+                    <div>
+                        <h2>{{ prediction_text }}</h2>
+                        <p>{{ detailed_msg }}</p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

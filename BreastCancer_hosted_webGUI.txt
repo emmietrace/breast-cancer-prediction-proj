@@ -1,0 +1,30 @@
+Name: Emmanuel Okolo
+Matric Number: 23CG034116
+Machine Learning Algorithm Used: Support Vector Machine (SVM)
+Model persistence method used: Joblib (Scikit-Learn Pipeline)
+Live URL of the hosted application: 
+GitHub repository link: [INSERT GITHUB LINK]
+
+=========================================
+PROJECT DOCUMENTATION & SETUP
+=========================================
+
+1. Project Overview:
+   This project deploys a Support Vector Machine (SVM) classifier to predict whether a breast tumor is Benign or Malignant. The model uses 5 key features: radius_mean, texture_mean, perimeter_mean, concavity_mean, and smoothness_mean.
+
+2. How to Run Locally:
+   Step A: Clone the repository.
+   Step B: Install dependencies:
+           pip install -r requirements.txt
+   Step C: Run the application:
+           python app.py
+   Step D: Open browser to http://127.0.0.1:5000
+
+3. Deployment Details:
+   - The app is deployed on Render.com using Gunicorn.
+   - The model is loaded from the /model/ directory.
+   - Static assets are served via Flask's 'static' folder.
+
+4. Model Reproduction:
+   - The training notebook is located in /model/model_building.ipynb.
+   - It includes a robust data loading mechanism (Drive/Direct Upload) and utilizes a Scikit-Learn Pipeline for consistent preprocessing.
