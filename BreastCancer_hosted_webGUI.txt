@@ -1,5 +1,3 @@
-Name: Emmanuel Okolo
-Matric Number: 23CG034116
 Machine Learning Algorithm Used: Support Vector Machine (SVM)
 Model persistence method used: Joblib (Scikit-Learn Pipeline)
 Live URL of the hosted application: 
